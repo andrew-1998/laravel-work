@@ -35,7 +35,13 @@ class NewsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'title'=>'required', //'title'=>'required' Работает без квадратных скобок, не понимаю зачем они в этой конструкции
+            'description'=>'required'
+        ]);
+        $allFields=$request->all();
+
+        return response()->json($allFields);
     }
 
     /**

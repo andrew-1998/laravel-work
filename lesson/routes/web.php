@@ -16,11 +16,15 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\Admin\CategoryController as AdminCategoryController;
 use App\Http\Controllers\Admin\NewsController as AdminNewsController;
+use App\Http\Controllers\Admin\FeedbackController as AdminFeedbackController;
+use App\Http\Controllers\Admin\DataorderController as AdminDataorderController;
 
 //admin
 Route::group(['prefix'=>'admin'], function() {
 	Route::resource('/categories', AdminCategoryController::class);
 	Route::resource('/news', AdminNewsController::class);
+	Route::resource('/customers/feedback', AdminFeedbackController::class);
+	Route::resource('/customers/dataorder', AdminDataorderController::class);
 });
 
 Route::get('/', function() {

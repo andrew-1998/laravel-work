@@ -5,13 +5,8 @@
         <h1 class="h2">Список новостей</h1>
         <div class="btn-toolbar mb-2 mb-md-0">
           <div class="btn-group me-2">
-            <button type="button" class="btn btn-sm btn-outline-secondary">Опубликовать</button>
-            <button type="button" class="btn btn-sm btn-outline-secondary">Загрузить</button>
-          </div>
-          <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
-            <span data-feather="calendar"></span>
-            На этой неделе
-          </button>
+            <a href="{{ route('news.create') }}" class="btn btn-sm btn-outline-secondary">Добавить новость</a>            
+          </div>          
         </div>
-      </div> 
+    </div> 
 @endsection
