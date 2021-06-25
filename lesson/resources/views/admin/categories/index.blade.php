@@ -9,4 +9,28 @@
           </div>          
         </div>
     </div> 
+    <div class="table-responsive">
+          	<table class="table table-bordered">
+          		<thead><tr>
+          			<th>#ID</th>
+          			<th>Заголовок</th>
+          			<th>Описание</th>
+          			<th>Действия</th>
+          		</tr></thead>
+          		<tbody>
+          			@forelse($categories as $cat)
+          			<tr>
+          				<td>{{ $cat->id }}</td>
+          				<td>{{ $cat->title }}</td>
+          				<td>{{ $cat->description }}</td>
+          				<td><a href="#">Ред.</a>&nbsp;||&nbsp;<a href="#">Удал.</a></td>
+          			</tr>
+          			@empty
+          			<tr>
+          				<td colspan="4"><h3>Записей нет</h3></td>
+          			</tr>
+          			@endforelse
+          		</tbody>        		
+          	</table>
+    </div>   
 @endsection

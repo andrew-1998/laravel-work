@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Category;
 
 class CategoryController extends Controller
 {
@@ -14,7 +15,13 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        return view('admin.categories.index');
+        //dd(env('DB_DATABASE'));
+        $model=new Category();
+        $categories=$model->categoryList();
+        
+        return view('admin.categories.index', [
+            'categories'=>$categories
+        ]);
     }
 
     /**
